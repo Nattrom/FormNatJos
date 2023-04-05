@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>FORMULARIO NATJOS</title>
+    <style>
+        input[type="number"] {
+            -webkit-appearance: textfield;
+            -moz-appearance: textfield;
+            appearance: textfield;
+        }
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor1">
+        <div class="contenedorForm">
+            <form>
+                <h1>FORMULARIO DE ESTUDIANTE</h1>
+                <div class="formulario">
+                    <input type="number" id="Id" placeholder="Identificación">
+                </div>
+                <div class="formulario">
+                    <input type="text" id="Nombre" placeholder="Nombre">
+                </div>
+                <div class="formulario">
+                    <input type="text" id="Apellido" placeholder="Apellido">
+                </div>
+                <div class="formulario">
+                    <input type="number" id="Edad" placeholder="Edad">
+                </div>
+                <div class="formulario">
+                    <input type="number" id="Telefono" placeholder="Telefono">
+                </div>
+                <div class="femormas">
+                    <label for="Sexo" class="form-label"></label>
+                    <select class="form-select" aria-label="Default select example" id="Sexo">
+                        <option>sexo</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+                <div class="formulario">
+                    <input type="text" id="Profesion" placeholder="Profesion">
+                </div>
+                <div class="formulario">
+                    <input type="text" id="Universidad" placeholder="Universidad">
+                </div>
+            </form>
+            <br>
+            <button onclick="Guardar()"> Guardar </button>
+            <button onclick="Mostrar()"> Mostrar </button>
+        </div>
+    </div>
+    <div class="tabla">
+        <table border = 1 >
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                    <th>EDAD</th>
+                    <th>TELEFONO</th>
+                    <th>SEXO</th>
+                    <th>PROFESION</th>
+                    <th>UNIVERSIDAD</th>
+                </tr>
+            </thead>
+            <tbody id = CuerpoTabla>
+            </tbody>
+        </table>
+    </div>
+    <script src="index.js"></script>
+    <footer>
+        <p> De Natalia Romerin & Josttin Perez </p>
+      </footer>
+</body>
+</html>
