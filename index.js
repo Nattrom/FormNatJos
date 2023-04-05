@@ -1,16 +1,16 @@
 const estudiates = [
     {
-        id: 1234,
-        name: "Andrea",
-        lastname: "Dominguez",
-        age: 20,
-        phone: 3022428028,
-        sex: "Femenino",
+        id: 106789,
+        name: "Josttin",
+        lastname: "Perez",
+        age: 19,
+        phone: 3022428031,
+        sex: "Masculino",
         profession: "Programmer",
         univer: "Universidad de la costa"
     },
     {
-        id: 1234,
+        id: 100194,
         name: "Natalia",
         lastname: "Romerin",
         age: 20,
@@ -20,12 +20,12 @@ const estudiates = [
         univer: "Universidad de la costa",
     },
     {
-        id: 1234,
-        name: "Josttin",
-        lastname: "Perez",
-        age: 19,
-        phone: 3022428031,
-        sex: "Masculino",
+        id: 100717,
+        name: "Andrea",
+        lastname: "Dominguez",
+        age: 20,
+        phone: 3022428028,
+        sex: "Femenino",
         profession: "Programmer",
         univer: "Universidad de la costa"
     }
@@ -42,40 +42,33 @@ let universidad = document.getElementById("Universidad");
 
 const Guardar = () => {
 
-    if (id.value == "" || nombre.value == "" || apellido.value == "" || edad.value == "" || telefono.value == "" || sexo.value == "" || profesion.value == "" || universidad.value == "") {
+    if (id.value == "" || nombre.value == "" || apellido.value == "" || edad.value == "" || telefono.value == "" || sexo.value == "" || profesion.value == "" || universidad.value == "" || sexo.value == "Sexo") {
         alert("Porfavor llenar todos los campos");
-    }
-    else{
-        for (let i = 0; i < estudiates.length; i++) {
-            if (estudiates[i].id == id.value) {
-                alert("Estudiante ya existe");
-                return;
-            }else{
-                let nuevoEstudiantes = {
-                    id: id.value,
-                    name: nombre.value,
-                    lastname: apellido.value,
-                    age: edad.value,
-                    phone: telefono.value,
-                    sex: sexo.value,
-                    profession: profesion.value,
-                    univer: universidad.value
-                }
-                estudiates.push(nuevoEstudiantes);
-                alert("Estudiante Guardado")
-                id.value = "";
-                nombre.value = "";
-                apellido.value = "";
-                edad.value = "";
-                telefono.value = "";
-                sexo.value = "";
-                profesion.value = "";
-                universidad.value = "";
-                return
-            }
+    }else if(verificar() == true) {
+        alert("Esta id ya existe");
+    }else{
+        let nuevo = {
+            id: id.value,
+            name: nombre.value,
+            lastname: apellido.value,
+            age: edad.value,
+            phone: telefono.value,
+            sex: sexo.value,
+            profession: profesion.value,
+            univer: universidad.value
         }
+        estudiates.push(nuevo);
+        alert("Estudiante guardado con exito")
+        id.value = "";
+        nombre.value = "";
+        apellido.value = "";
+        edad.value = "";
+        telefono.value = "";
+        sexo.value = 'Sexo';
+        profesion.value = "";
+        universidad.value = "";
+        Mostrar();
     }
-   
 }
 
 let cuerpotabla = document.getElementById("CuerpoTabla")
@@ -97,4 +90,13 @@ const Mostrar = () => {
         `
     }
     cuerpotabla.innerHTML = tabla
+}
+
+const verificar = () => {
+    for (let i = 0; i < estudiates.length; i++) {
+        if (estudiates[i].id == id.value) {
+            return true;
+        }
+    }
+    return false;
 }
